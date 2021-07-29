@@ -1,0 +1,8 @@
+Start MasterServer: mvn exec:java@Master (default 127.0.0.1:8000)
+Start WorkerServer1: mvn exec:java@Worker -Dexec.args="127.0.0.1:8000 Worker1 8001" (Worker1/inputDir)
+Start WorkerServer2:mvn exec:java@Worker -Dexec.args="127.0.0.1:8000 Worker2 8002" (Worker2/inputDir)
+http://localhost:8000/status
+Input parameters, "submit job", wait until worker job prepared, "run job".
+(Default: Worker1/outputDir)
+
+Crawler: mvn exec:java@Cralwer -Dexec.args="http://crawltest.cis.upenn.edu/ ./crawltest 2 30"(2 MB, 30 files)
